@@ -33,7 +33,7 @@ DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = ResNet(BasicBlock, [5, 5, 5], num_classes=n_classes)
 # 初始化 https://androidkt.com/initialize-weight-bias-pytorch/
 model.linear.bias.data.fill_(-np.log(n_classes-1))
-ckpt_file_path = os.path.join("models/best_model_lps-mgl.pth")
+ckpt_file_path = os.path.join("models/Garbage/best_model_lpsl.pth")
 model.load_state_dict(torch.load(ckpt_file_path))
 model.to(DEVICE)
 
